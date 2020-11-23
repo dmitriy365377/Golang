@@ -1,14 +1,31 @@
 package main
 
-import (
-	"net/http"
-)
+import "fmt"
 
 func main() {
-	http.HandleFunc("/hello", func(writer http.ResponseWriter, request *http.Request) {
-		writer.Write([]byte("fff"))
-	})
-	if err := http.ListenAndServe(":8000", nil); err != nil {
-		panic(err)
-	}
+	// fmt.Println(
+	// 	-200,-100,0,50,100,
+	// )
+
+	// fmt.Println(
+	// 	-50.5,-1,0.,1.,100,
+	// )
+
+	// fmt.Println(
+	// 	true,false,
+	// )
+
+	// fmt.Println(
+	// 	"true,false,",
+	// )
+	var speed int
+	var heat float64
+	var off bool
+	var brand string
+
+	fmt.Println(speed)
+	fmt.Println(heat)
+	fmt.Println(off)
+	fmt.Println(brand)
 }
+ 
