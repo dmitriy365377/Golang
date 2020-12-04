@@ -1,31 +1,27 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 func main() {
-	// fmt.Println(
-	// 	-200,-100,0,50,100,
-	// )
-
-	// fmt.Println(
-	// 	-50.5,-1,0.,1.,100,
-	// )
-
-	// fmt.Println(
-	// 	true,false,
-	// )
-
-	// fmt.Println(
-	// 	"true,false,",
-	// )
-	var speed int
-	var heat float64
-	var off bool
-	var brand string
-
-	fmt.Println(speed)
-	fmt.Println(heat)
-	fmt.Println(off)
-	fmt.Println(brand)
+	fmt.Print(twoSum([]int{1, 2, 3, 4}, 6))
 }
- 
+
+func twoSum(nums []int, target int) []int {
+	mapIndex := make(map[int]int)
+	result := make([]int, 0, 2)
+
+	for i, v := range nums {
+		mapIndex[v] = i
+	}
+	for i := 0; i < len(nums)-1; i++ {
+		currDiff := target - int(nums[i])
+
+		if _, ok := mapIndex[currDiff]; ok != false && mapIndex[currDiff] != i {
+			result = append(result, i, mapIndex[currDiff])
+			return result
+		}
+	}
+	return result
+}
